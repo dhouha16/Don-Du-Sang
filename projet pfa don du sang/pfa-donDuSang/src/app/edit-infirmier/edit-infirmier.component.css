@@ -1,0 +1,98 @@
+.clickable{
+    cursor:pointer;
+}
+
+  
+  .main {
+    flex: 1;
+    grid-area: main;
+    
+    overflow-y: auto;
+    overflow-x: hidden;
+    
+    padding-left: 300px;
+    padding-right: 100px;
+    padding-bottom: 60px;
+    
+
+    background-color: #f2f8fd;
+  }
+ 
+.style{
+  font-family: Cursive;
+  font-weight: bold;
+  color: #FFD700;
+}
+.ui{
+    
+     width: 250px;
+     height: 100%;
+     color: black;
+  }
+  .sidebar{
+    position: absolute;
+    z-index: var(--zindex-header);
+    left: 0;
+    top: var(--cd-header-height);
+    width: var(--cd-sidebar-width);
+    transition: .2s;
+    visibility: visible;
+    opacity: 0;
+   
+  }
+  .pp{
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   font-size: 12px;
+   color: white;
+  }
+  body{
+   
+    background-color: white;
+  }
+
+
+input{
+    border-color: black;
+    border:3px solid #75151c;
+    flex: 7;
+    background-color: yellow;
+}
+label{
+    color: #ff7a00;
+    font-family: Impact, fantasy;
+    line-height: 2em;
+}
+
+
+.avatar {
+  vertical-align: middle;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-left: 30px;
+  border:3px solid #75151c;
+  border-color: white;
+  }
+.oo{
+  box-sizing: content-box;
+}
+.ii{
+  float: left;
+}
+.text{
+    margin-right: 60px; 
+    text-align: center;
+    margin-bottom: 50px;
+  
+  }
+  .espace{
+    line-height: 1em;
+    text-align: center;
+    font-family: Impact, fantasy;
+    font-weight: bold;
+    color:#d44000
+  }
+  .txt{
+    color:#ff7a00;
+    margin-left: -20px;
+  }

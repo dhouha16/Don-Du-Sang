@@ -1,0 +1,91 @@
+<body>
+  <div class="container-fluid">
+    <div class="row flex-nowrap">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 navbar-default oo">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100  ui sidebar-nav navbar-collapse ">
+                <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none ">
+                    <span class="fs-5 d-none d-sm-inline">ESPACE INFIRMIER</span>
+                </a>
+                <img src="assets/images/welcomeInfirmier.png" alt="Avatar" class="avatar">
+                                <ul class="nav ee" id="side-menu">
+
+    
+
+                  <li class="pp clickable">
+                    <a (click)="onGetdemande()" *ngIf="isConnecter">
+                      <i class="fa fa-user fa-fw  nav_icon"></i>
+                      <span>consulter les demandes</span></a>
+                   </li>
+                   <li class="pp clickable">
+                    <a routerLink="/response" *ngIf="isConnecter" class="pp">
+                      <i class=" fa fa-list   nav_icon "></i>
+                      <span >consulter les donneurs</span></a>
+                   </li>
+                   <li class="pp clickable">
+                    <a routerLink="/analyse"  *ngIf="isConnecter" class="pp">
+                      <i class=" fa fa-list   nav_icon "></i>
+                      <span >gerer les analyses</span></a>
+                   </li>
+                   <li class="nav-item ">
+                    <a class="nav-link " *ngIf="isConnecter" (click)="deconnect()" routerLink="/login" routerlinkactive="active">se deconecter</a>
+                </li>
+                 
+              </ul>
+             
+                <hr>
+                <div class="dropdown pb-4">
+                   
+                
+                  
+                </div>
+            </div>
+        </div>
+			<div class="main-page">
+
+       <!-- <form #f="ngForm" (ngSubmit)="onChercher(f.value)">
+          <label>cin</label>
+          <input type="text" name="keyword" ngModel>
+          <button type="submit" class="btn btn-primary">chercher</button>
+        </form>-->
+
+
+
+  <div style="width:100%; height:600px; background-color:transparent;">
+    <div class="tables panel-danger" *ngIf="demandes">
+      <h3 class="text espace">liste des demandes:</h3>
+      <div class="bs-example4 panel-body no-padding" data-example-id="hoverable-table"> 
+        <table class="table table-striped" >
+          <thead> 
+          <tr class="warning">
+            <th>Prénom</th>
+            <th>Nom</th>
+            <th>typeSang</th>
+            <th>email</th>
+            <th>telephone</th>
+            <th>sexe</th> </tr> </thead>
+            <tbody> <tr *ngFor="let p of demandes">  <tr *ngFor="let p of demandes">
+              
+            
+              <td>{{p.prenom}}</td>
+              <td>{{p.nom}}</td>
+              <td>{{p.typeSang}}</td>
+              <td>{{p.email}}</td>
+              <td>{{p.telephone}}</td>
+              <td>{{p.sexe}}</td>
+              
+            </tr> </tbody>
+          </table>
+   
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+
+
+
+
+
+

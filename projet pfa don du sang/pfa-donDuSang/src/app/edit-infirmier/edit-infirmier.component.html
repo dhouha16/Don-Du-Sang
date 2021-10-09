@@ -1,0 +1,113 @@
+<body>
+    <body>
+        <div class="container-fluid">
+          <div class="row flex-nowrap">
+              <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 navbar-default oo">
+                  <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100  ui sidebar-nav navbar-collapse ">
+                      <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none ">
+                          <span class="fs-5 d-none d-sm-inline txt">ESPACE ADMINISTRATEUR</span>
+                          
+                          
+                      </a>
+                      <img src="assets/images/welcome.png" alt="Avatar" class="avatar">
+                      <ul class="nav ee" id="side-menu">
+      
+                        <li class="pp clickable">
+                          <i class="fa fa-users fa-fw nav_icon"></i>
+                            <span>gerer les utilisateurs</span>
+                              <ul class="nav clickable">
+                                <li> Liste des utilisateurs</li>
+                               
+                              </ul>
+                        </li>
+                        <li class="pp clickable">
+                          <a routerLink="/response" class="pp">
+                            <i class=" fa fa-list   nav_icon "></i>
+                            <span >gerer les infirmiers</span></a>
+                         </li>
+                        
+      
+                        <li class="pp clickable">
+                          <a routerLink="/demandes" class="pp">
+                            <i class="fa fa-user fa-fw  nav_icon "></i>
+                            <span>consulter les demandes</span></a>
+                         </li>
+                         <li class="pp clickable">
+                          <a routerLink="/response" class="pp">
+                            <i class=" fa fa-list   nav_icon "></i>
+                            <span >consulter les donneurs</span></a>
+                         </li>
+                         
+                        
+                            <!-- /.nav-second-level -->
+                    
+                        
+                       
+                       
+                            <!-- /.nav-second-level -->
+                      
+                       
+                    </ul>
+                   
+                      <hr>
+                      <div class="dropdown pb-4">
+                         
+                      
+                        
+                      </div>
+                  </div>
+              </div>
+      
+<div class="container">
+    <div class="col-md-9 col-sm-6 col-xs-12">
+            <h3 class="text espace">modifier un infirmier:</h3>  
+            <div class="panel-body" *ngIf="currentPersonne">
+                <form #f="ngForm" (ngSubmit)="onUpdateInfirmier(f.value)">
+                    <div class="form-groupe">
+                        <label class="control-label">Cin</label>
+                        <input class="form-control" type="text" name="cin" ngModel [(ngModel)]=currentPersonne.id>
+                    </div>
+                    <div class="form-groupe">
+                        <label class="control-label">Cin</label>
+                        <input class="form-control" type="text" name="cin" ngModel [(ngModel)]=currentPersonne.cin>
+                    </div>
+                    <div class="form-groupe">
+                        <label class="control-label">nom</label>
+                        <input class="form-control" type="text" name="nom" ngModel [(ngModel)]=currentPersonne.nom>
+                    </div>
+                    <div class="form-groupe">
+                        <label class="control-label">prenom</label>
+                        <input class="form-control" type="text" name="prenom" ngModel [(ngModel)]=currentPersonne.prenom>
+                    </div>
+                    <div class="form-groupe">
+                        <label class="control-label">date-naissance</label>
+                        <input class="form-control" type="date" name="date_naissance" ngModel [(ngModel)]=currentPersonne.date_naissance>
+                    </div>
+                    <div class="form-groupe">
+                        <label class="control-label">mot de passe</label>
+                        <input class="form-control" type="password" name="password" ngModel [(ngModel)]=currentPersonne.password>
+                    </div>
+                    <div class="form-groupe">
+                        <label class="control-label">groupe don</label>
+                        <input class="form-control" type="text" name="typeSang" ngModel [(ngModel)]=currentPersonne.typesang>
+                    </div>
+                    <div class="form-groupe">
+                        <label class="control-label">email</label>
+                        <input class="form-control" type="text" name="email" ngModel [(ngModel)]=currentPersonne.email>
+                    </div>
+                    <div class="form-groupe">
+                        <label class="control-label">telephone</label>
+                        <input class="form-control" type="text" name="telephone" ngModel [(ngModel)]=currentPersonne.telephone>
+                    </div>
+                    <div class="form-groupe">
+                        <label class="control-label">sexe</label>
+                        <input class="form-control" type="text" name="sexe" ngModel [(ngModel)]=currentPersonne.sexe>
+                    </div>
+                    <button class="btn btn-primary" type="submit">enregistrer</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</body>

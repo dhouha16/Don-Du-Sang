@@ -1,0 +1,57 @@
+.b{
+    background-color: white;
+}
+.image{
+    margin-left: -70%;
+    margin-right: -10px;
+    margin-top: -50px;
+}
+.text{
+    margin-right: 60px; 
+    text-align: center;
+}
+.espace{
+    line-height: 2em;
+    text-align: center;
+    font-family: Impact, fantasy;
+    font-weight: bold;
+    color:#862323
+}
+.espace1{
+    line-height: 4em;
+    text-indent: 60px;
+    font-family: URW Chancery L, cursive;
+    font-weight: bold;
+    color:#ce1212
+}
+.espace2{
+    line-height: 2em;
+    text-indent: 100px;
+}
+.back{
+    background-color: white;
+}
+p{
+    color: black;
+}
+li{
+    color: black;
+}
+.gras{
+    font-weight: bold;
+}
+.iframe{
+    margin-right:50%;
+}
+.espace3{
+    line-height: 2em;
+    text-indent: 100px;
+}
+.image{
+    height: 100%;
+    max-width: 100%;
+    
+}
+body{
+    background-color: white;
+}

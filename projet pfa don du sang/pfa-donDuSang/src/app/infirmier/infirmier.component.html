@@ -1,0 +1,93 @@
+
+<body>
+    <div class="container-fluid">
+      <div class="row flex-nowrap">
+          <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 navbar-default oo">
+              <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100  ui sidebar-nav navbar-collapse ">
+                  <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none ">
+                      <span class="fs-5 d-none d-sm-inline txt">ESPACE ADMINISTRATEUR</span>
+                      
+                      
+                  </a>
+                  <img src="assets/images/welcome.png" alt="Avatar" class="avatar">
+                  <ul class="nav ee" id="side-menu">
+  
+                    <li class="pp clickable">
+                      <i class="fa fa-users fa-fw nav_icon"></i>
+                        <span>gerer des infirmiers</span>  
+                    </li>
+
+                    <li class="pp clickable">
+                      <a routerLink="/infirmier"  *ngIf="isConnecter1" class="pp">
+                        <i class=" fa fa-list   nav_icon "></i>
+                        <span >gerer les infirmiers</span></a>
+                        <ul class="nav clickable">
+                            
+                        <li><a (click)="onGetInfirmier()" *ngIf="isConnecter1"><i class="fa fa-angle-right"></i> Liste des infirmiers</a></li>
+                        <li><a  routerLink="/new-infirmier" *ngIf="isConnecter1"><i class="fa fa-angle-right"></i> ajouter un infirmier</a></li>
+
+                        </ul>
+                     </li>
+                     <li class="nav-item ">
+                      <a class="nav-link " *ngIf="isConnecter1" (click)="deconnect()" routerLink="/login" routerlinkactive="active">se deconecter</a>
+                  </li>
+                   
+                </ul>
+               
+                  <hr>
+                  <div class="dropdown pb-4">
+                     
+                  
+                    
+                  </div>
+              </div>
+          </div>
+  
+          <!--------------------------------------------------------->
+          <div class="col py-3">
+            
+              <div style="width:100%; height:600px; background-color:transparent;">
+              <div class="tables panel-danger" *ngIf="infirmier">
+                <h3 class="text espace">liste des utilisateurs:</h3>                   
+                <div class="bs-example4 panel-body no-padding" data-example-id="hoverable-table">               
+                <table class="table table-striped" >
+                  <thead> 
+                   <tr class="warning"><th>id</th>
+                    
+                    <th>cin</th>
+                     <th>Prénom</th>
+                     <th>Nom</th> 
+                     <th>email</th>
+                     <th>telephone</th>
+                     <th>sexe</th> 
+                     <th>supprimer</th>
+                     <th>modifier</th></tr> </thead>
+                      <tbody> <tr *ngFor="let p of infirmier._embedded.infirmiers">  
+                      <tr *ngFor="let p of infirmier._embedded.infirmiers">
+                       <td>{{p.id}}</td>
+                       <td>{{p.cin}}</td>
+                       <td>{{p.prenom}}</td>
+                       <td>{{p.nom}}</td>
+                       <td>{{p.email}}</td>
+                       <td>{{p.telephone}}</td>
+                       <td>{{p.sexe}}</td>
+                      <td><a class="btn btn-danger" (click)="onDelete(p)">supprimer</a></td>
+                      <td><a class="btn btn-success" (click)="onEditInfirmier(p)">modifier</a></td>
+                      </tr> </tbody> 
+                      <!-- <ul *ngIf="pages" class="nav nav-pills">
+                         <li class="clickable" [ngClass]="i==currentPage?'active':''" *ngFor="let p of pages;let i=index">
+                           <a class="nav-link" data-toggle="pill" (click)="onPageInfirmier(i)">{{i}}</a>
+                         </li>
+                       </ul>-->
+                      </table>
+            </div>
+            </div>
+              </div>
+  
+              
+          </div>
+      </div>
+  </div>
+  
+  </body>
+  

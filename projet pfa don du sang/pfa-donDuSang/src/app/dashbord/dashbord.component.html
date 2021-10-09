@@ -1,0 +1,49 @@
+<body>
+    <div class="container-fluid">
+      <div class="row flex-nowrap">
+          <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 navbar-default oo">
+              <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100  ui sidebar-nav navbar-collapse ">
+                  <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none ">
+                      <span class="fs-5 d-none d-sm-inline">ESPACE INFIRMIER</span>
+                  </a>
+                  <img src="assets/images/welcomeInfirmier.png" alt="Avatar" class="avatar">
+                  <ul class="nav ee" id="side-menu">
+  
+                 <!--  <li class="pp clickable">
+                      <a routerLink="/personne" class="pp">
+                      <i class="fa fa-users fa-fw nav_icon"></i>
+                        <span>gerer les personnes</span>
+                      </a>
+                    </li>--> 
+  
+                    <li class="pp clickable">
+                      <a routerLink="/demandes" *ngIf="isConnecter" class="pp">
+                        <i class="fa fa-user fa-fw  nav_icon"></i>
+                        <span>consulter les demandes</span></a>
+                     </li>
+                     <li class="pp clickable">
+                      <a routerLink="/response" *ngIf="isConnecter" class="pp">
+                        <i class=" fa fa-list   nav_icon "></i>
+                        <span >consulter les donneurs</span></a>
+                     </li>
+                     <li class="pp clickable">
+                      <a routerLink="/response" *ngIf="isConnecter" class="pp">
+                        <i class=" fa fa-list   nav_icon "></i>
+                        <span >gerer les analyses</span></a>
+                     </li>
+                     <li class="nav-item ">
+                      <a class="nav-link " *ngIf="isConnecter" (click)="deconnect()" routerLink="/login" routerlinkactive="active">se deconecter</a>
+                  </li>
+                    
+                </ul>
+               
+                  <hr>
+                  <div class="dropdown pb-4">
+                     
+                  
+                    
+                  </div>
+              </div>
+          </div>
+              <div class="main-page">
+                  </div></div></div></body>

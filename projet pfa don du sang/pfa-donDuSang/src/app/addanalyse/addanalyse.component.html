@@ -1,0 +1,34 @@
+<div class="card my-5">
+    <div class="card-body" *ngIf="response">
+      <form (ngSubmit)="onSubmit(productForm.value)" #productForm="ngForm">
+        <div class="form-group">
+          <label for="name">Brand</label>
+          <input class="form-control" type="number" name="date_naissance" ngModel [(ngModel)]=response.id
+            
+            id="id" 
+            name="id" 
+            placeholder="Enter your dateDon"
+            required #name="ngModel">
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Name</label>
+          <input type="text" [(ngModel)]="analyse.description" 
+            class="form-control" 
+            id="name" 
+            name="description" 
+            placeholder="Enter your name"
+            required #name="ngModel">
+          <div [hidden]="!name.pristine" class="alert alert-danger">name is required</div>
+        </div>
+
+        <div class="form-group">
+          <label for="response">donneur id</label>
+          <select [(ngModel)]="analyse.response" name="response.id">
+            <option *ngFor="let response of donneur">{{ response.id }}</option>
+          </select>
+        </div>
+        <button type="submit" [disabled]="!productForm.form.valid" class="btn btn-info">Submit</button>
+      </form>
+    </div>
+  </div>

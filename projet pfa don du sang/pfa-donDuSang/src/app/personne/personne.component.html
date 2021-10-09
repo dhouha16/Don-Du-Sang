@@ -1,0 +1,95 @@
+
+<body>
+  <div class="container-fluid">
+    <div class="row flex-nowrap">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 navbar-default oo">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100  ui sidebar-nav navbar-collapse ">
+                <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none ">
+                    <span class="fs-5 d-none d-sm-inline txt">ESPACE ADMINISTRATEUR</span>
+                    
+                    
+                </a>
+                <img src="assets/images/welcome.png" alt="Avatar" class="avatar">
+                <ul class="nav ee" id="side-menu">
+
+                  <li class="pp clickable">
+                    <i class="fa fa-users fa-fw nav_icon"></i>
+                      <span>gerer les utilisateurs</span>
+                        <ul class="nav clickable">
+                          <li><a (click)="onGetPersonne()" *ngIf="isConnecter1"><i class="fa fa-angle-right"></i> Liste des utilisateurs</a></li>
+                         
+                        </ul>
+                  </li>
+                  <li class="pp clickable">
+                    <a routerLink="/infirmier"  *ngIf="isConnecter1" class="pp">
+                      <i class=" fa fa-list   nav_icon "></i>
+                      <span >gerer les infirmiers</span></a>
+                   </li>
+                   <li class="nav-item ">
+                    <a class="nav-link " *ngIf="isConnecter1" (click)="deconnect()" routerLink="/login" routerlinkactive="active">se deconecter</a>
+                </li>
+                 
+              </ul>
+             
+                <hr>
+                <div class="dropdown pb-4">
+                   
+                
+                  
+                </div>
+            </div>
+        </div>
+
+        <!--------------------------------------------------------->
+        <div class="col py-3">
+          
+            <div style="width:100%; height:600px; background-color:transparent;">
+            <div class="tables panel-danger" *ngIf="personne">
+              <h3 class="text espace">liste des utilisateurs:</h3>
+
+              <form #f="ngForm" (ngSubmit)="onChercher(f.value)">
+                <label class="txt1">cin</label>
+                <input type="text" name="keyword" ngModel>
+                <button type="submit" class="btn btn-danger mm">chercher</button>
+              </form>
+									
+              <div class="bs-example4 panel-body no-padding" data-example-id="hoverable-table">               
+              <table class="table table-striped" >
+                <thead> 
+                 <tr class="warning"><th>id</th>
+                   <th>Prénom</th>
+                   <th>Nom</th> 
+                   <th>cin</th> 
+                   <th>email</th>
+                   <th>telephone</th>
+                   <th>sexe</th> 
+                   <th>supprimer</th>
+                   <th>modifier</th></tr> </thead>
+                    <tbody> <tr *ngFor="let p of personne._embedded.personnes">  
+                    <tr *ngFor="let p of personne._embedded.personnes">
+                     <td>{{p.id}}</td>
+                     <td>{{p.prenom}}</td>
+                     <td>{{p.nom}}</td>
+                     <td>{{p.cin}}</td>
+                     <td>{{p.email}}</td>
+                     <td>{{p.telephone}}</td>
+                     <td>{{p.sexe}}</td>
+                     <td><a class="btn btn-danger" (click)="onDelete(p)">supprimer</a></td>
+                     <td><a class="btn btn-success" (click)="onEditPersonne(p)">modifier</a></td>
+                    </tr> </tbody> 
+                     <ul *ngIf="pages" class="nav nav-pills">
+                       <li class="clickable" [ngClass]="i==currentPage?'active':''" *ngFor="let p of pages;let i=index">
+                         <a class="nav-link" data-toggle="pill" (click)="onPagePersonne(i)">{{i}}</a>
+                       </li>
+                     </ul>
+                    </table>
+          </div>
+          </div>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+
+</body>
